@@ -1,0 +1,89 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+.firstcontainer{
+    /* display: block; */
+    text-align: center;
+    margin: 10px;
+    /* min-height: 100vh; */
+    /* height: 100vh; */
+}
+.firstcontainer input{
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.firstcontainer textarea{
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.container{
+    width:270px;
+    height: 300px;
+    border: 2px solid black;
+    border-radius: 25px;
+    margin-left: 10%;
+    margin-top: 20px;
+    display: inline-flex;
+    flex-direction: column;
+    /* background-color: pink; */
+}
+.title{
+    /* padding: 10px; */
+    padding: 0%;
+    margin:0%;
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 0%;
+    letter-spacing: 0em;
+
+}
+
+.description{
+    padding: 10px;
+    font-size: 1.25rem;
+    /* overflow: scroll; */
+    overflow: hidden;
+    /* background-color: rebeccapurple; */
+}
+.button{
+   
+    cursor: pointer;
+    /* position: absolute; */
+    /* position: relative; */
+    /* top: 50%; */
+    margin-left: 90%;
+    /* margin-top: 10%; */
+    margin-top: 5%;
+    font-size: 1.5rem;
+    right: 0%;
+    /* padding: 12px 16px; */
+    transform: translate(0%, -50%);
+  /* background-color: red; */
+  margin-bottom: 0%;
+  padding: 0%;
+}
+span select{
+    margin-right: 90px;
+}
+span select,span button{
+    width: 150px;
+    height:30px;
+    border-radius: 25px;
+    
+    
+}
+span select{
+    padding-left:20px ;
+    background-color: #5DA2D5;
+    border: none;
+    color:white;
+}
+span button{
+    background-color: #5DA2D5;
+    border: none;
+    color:white;
+
+}

@@ -1,0 +1,31 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+.maincontainer{
+    /* background-color: black; */
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+    height: 10vh;
+    /* border: 2px solid blue; */
+}
+header{
+
+    height: 10vh;
+    border: 1px solid black;
+    width: 100%;
+
+}
+#canvas{
+    height: 90vh;
+    /* width: 100vh; */
+    width: 100%;
+}
+.controlsec, .controlthird{
+    /* flex: 1; */
+    display: inline;
+    margin-left:3rem ;
+}
