@@ -27,7 +27,7 @@ window.onscroll = function() {
     var user = document.forms["myform"]["useremail"].value;
     var confirmUser = document.forms["myform"]["cemail"].value;
     var pass = document.forms["myform"]["password"].value;
-    var confirmPass = document.forms["myform"]["cpassword"]
+    var confirmPass = document.forms["myform"]["cpassword"].value;
     if (firstname == "") {
       alert("All fields must be filled.");
     }
