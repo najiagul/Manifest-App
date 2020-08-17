@@ -2,14 +2,6 @@
 require_once 'pdo.php';
 
 session_start();
-//Demand a get parameter
-if ( !isset($_GET['email']) || strlen($_GET['email']) < 1 )
-{
-    header( 'Location: website-login.php' ) ;
-    return;
-    die('Name parameter missing');
- 
-}
 //Demand an active user
 if ( !isset($_SESSION['user']) )
 {
@@ -17,49 +9,49 @@ if ( !isset($_SESSION['user']) )
     return;
 } 
 
-//saving stickynotes to database
+//saving todos to database
 if (isset($_POST['add']))
     {
-    $_SESSION['title'] = $_POST['title'];
-    $_SESSION['textarea'] = $_POST['textarea'];
-    $_SESSION['colors'] = $_POST['colors'];
+        echo $_POST['bullet'];
+    $_SESSION['bullet'] = $_POST['bullet'];
     $sql_user = 'SELECT user_id from users WHERE email=:email';
     $userid = $pdo->prepare($sql_user);
-    $userid->execute(array(':email' => $_GET['email']));
+    $userid->execute(array(':email' => $_SESSION['user']));
     $check = $userid->fetch(PDO::FETCH_ASSOC);
     $userid = $check['user_id'];
-    $sql = 'INSERT INTO notes (title, text, urgency, user_id) VALUES (:title, :textarea,:urgency, :uid)';
+    $sql = 'INSERT INTO todolist (bullet, user_id) VALUES (:bullet, :uid)';
     $statement = $pdo->prepare($sql);
-    $statement->execute( array(':title'=> $_SESSION['title'],
-                                ':textarea' => $_SESSION['textarea'],
-                                ':urgency' => $_SESSION['colors'],
-                                ':uid' => $check['user_id'] ));
+    $statement->execute( array(':bullet'=> $_SESSION['bullet'],
+                                ':uid' => $userid
+                             ));
     
     // POST - Redirect - GET
-    header("Location: daily-to-do.php?email=".urlencode($_SESSION['user']));
+    header("Location: daily-to-do-final.php?email=".urlencode($_SESSION['user']));
     return;
     }
 
+//Retreiving all todos
 if (isset($_POST['show']) )
 {
     $sql_user = 'SELECT user_id from users WHERE email=:email';
     $userid = $pdo->prepare($sql_user);
-    $userid->execute(array(':email' => $_GET['email']));
+    $userid->execute(array(':email' => $_SESSION['user']));
     $check = $userid->fetch(PDO::FETCH_ASSOC);
     $userid = $check['user_id'];
-    $show_stmnt = "SELECT title, text, urgency FROM notes WHERE user_id = :uid";
+    $show_stmnt = "SELECT bullet FROM todolist WHERE user_id = :uid";
     $statement = $pdo->prepare($show_stmnt);
     $statement->execute( 
         array( ':uid' => $userid)
     );
     $statement->setFetchMode(PDO::FETCH_ASSOC);
-    $user_notes = array();
+    $user_bullets = array();
     $i=0;
     while ($r = $statement->fetch()) {
-        $user_notes[$i] = $r;
+        $user_bullets[$i] = $r;
         $i = $i + 1;
     }
-    print_r($user_notes);
+    $_SESSION['userbullets'] = $user_bullets;
+    print_r($_SESSION['userbullets']);
 
 }
 ?>
@@ -98,9 +90,13 @@ if (isset($_POST['show']) )
 
     <div class="container">
         <div class="header">
-            <h1>To-Do list</h1>
-            <input type="text" id="input_value" placeholder="What to you want to do?">
-            <span class="additem">ADD</span>
+            <form action="" method="post">
+                <h1>To-Do list</h1>
+                <input type="text" id="input_value" placeholder="What to you want to do?" name="bullet">
+                <input type="submit" value="Add"  name="add">
+                <input type="submit" value="My tasks" name="show">
+                <!-- <span class="additem">ADD</span> -->
+            </form>
         </div>
         <ul id="mylist">
             <!-- <li>wow</li>
