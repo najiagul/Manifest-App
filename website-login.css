@@ -11,7 +11,7 @@ body{
 nav{
     height: 12vh;
     background-color:#5DA2D5;
-    /* opacity: 75%; */
+    /* opacity: 75%; */ 
     display: flex;
     top: 0;
     position: sticky;
