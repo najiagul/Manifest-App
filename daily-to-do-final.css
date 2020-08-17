@@ -13,6 +13,8 @@ body{
     height: auto; 
     /* background-color: blue; */
     margin: 10px auto;
+    height: 100vh;
+    /* background-color: #00121b; */
 }
 .header{
     padding-top: 30px;
@@ -30,6 +32,7 @@ input{
     height: 30px;
     border: none;
     font-size: 1rem;
+    padding-left: 20px;
 }
 .additem{
     width: 25%;
