@@ -67,7 +67,8 @@ if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['login']
           <div class="line"></div>
       </div>
 
-      <div class="head">Manifest</div>
+      <div class="head"></div>
+      <img class="logo" src="logo-final.png"> 
       <ul class="nav-links">
           <li><a href="#">About</a></li>
           <li><a href="#">Features</a></li>
