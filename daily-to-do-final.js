@@ -14,7 +14,7 @@ window.onscroll = function() {
   } else {
     document.querySelector("nav").style.top = "-12vh";
   }
-  prevScrollpos = currentScrollPos;
+  prevScrollpos = currentScrollPos; 
 }
 
 
