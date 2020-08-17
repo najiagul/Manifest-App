@@ -1,6 +1,5 @@
 <?php
 require_once 'pdo.php';
-
 session_start();
 //Demand a get parameter
 if ( !isset($_GET['email']) || strlen($_GET['email']) < 1 )
@@ -22,21 +21,50 @@ if (isset($_POST['add']))
     {
     $_SESSION['title'] = $_POST['title'];
     $_SESSION['textarea'] = $_POST['textarea'];
+    $_SESSION['colors'] = $_POST['colors'];
     $sql_user = 'SELECT user_id from users WHERE email=:email';
     $userid = $pdo->prepare($sql_user);
     $userid->execute(array(':email' => $_GET['email']));
     $check = $userid->fetch(PDO::FETCH_ASSOC);
     $userid = $check['user_id'];
-    $sql = 'INSERT INTO notes (title, text, user_id) VALUES (:title, :textarea, :uid)';
+    $sql = 'INSERT INTO notes (title, text, urgency, user_id) VALUES (:title, :textarea,:urgency, :uid)';
     $statement = $pdo->prepare($sql);
     $statement->execute( array(':title'=> $_SESSION['title'],
                                 ':textarea' => $_SESSION['textarea'],
+                                ':urgency' => $_SESSION['colors'],
                                 ':uid' => $check['user_id'] ));
     
     // POST - Redirect - GET
     header("Location: notes.php?email=".urlencode($_SESSION['user']));
     return;
     }
+
+if (isset($_POST['show']) )
+{
+    $sql_user = 'SELECT user_id from users WHERE email=:email';
+    $userid = $pdo->prepare($sql_user);
+    $userid->execute(array(':email' => $_GET['email']));
+    $check = $userid->fetch(PDO::FETCH_ASSOC);
+    $userid = $check['user_id'];
+    $show_stmnt = "SELECT title, text, urgency FROM notes WHERE user_id = :uid";
+    $statement = $pdo->prepare($show_stmnt);
+    $statement->execute( 
+        array( ':uid' => $userid)
+    );
+    $statement->setFetchMode(PDO::FETCH_ASSOC);
+    $user_notes = array();
+    $i=0;
+    while ($r = $statement->fetch()) {
+        $user_notes[$i] = $r;
+        $i = $i + 1;
+    }
+    $_SESSION['usernotes'] = $user_notes;
+    print_r($_SESSION['usernotes']);
+    // POST - Redirect - GET
+    header("Location: notes.php?email=".urlencode($_SESSION['user']));
+    return;
+
+}
 
  ?>
 
@@ -63,7 +91,7 @@ if (isset($_POST['add']))
         <div class="head">Manifest</div>
         <ul class="nav-links">
             <li><a href="#">About</a></li>
-            <li><a href="#">Features</a></li>
+            <li><a href="features.html">Features</a></li>
             <li><a href="website-logout.php">Logout</a></li>
             <li><a href="#">Signup</a></li>
         </ul>
@@ -79,17 +107,19 @@ if (isset($_POST['add']))
         </div>
         <span>
             <select name="colors" id="colorselection">
-            <option value="">Not important</option>
-            <option value="pink">Important</option>
-            <option value="green">Urgent</option>
+            <option value="0">Not important</option>
+            <option value="1">Important</option>
+            <option value="2">Urgent</option>
             </select>
             <!-- <div class="addbutton"><button>add</button></div> -->
             <!--<input type="submit" name='add' class="addbutton" value="Add"/> -->
-           <!-- <input type="submit" name='add'  value="Save"/> -->
-           <button class="addbutton" type="submit" name="add" id="form1" >Show </button>
+            <input type="submit" name='add'  value="Save"/> 
+            <input type="submit" name='show' value="Show my notes"/>
+           <!-- <button class="addbutton" type="submit" name="add" id="form1" >Show </button>  -->
         </span>
         </form>
         <!-- <button class="addbutton" type="button" name="add" id="form1" >Show </button> -->
+
     </div>
     <div class="notescontainer"></div>
     <div class="footer">
