@@ -24,7 +24,7 @@ window.onscroll = function() {
 
 
 document.addEventListener('DOMContentLoaded', function () {
-    let listitems=document.getElementsByTagName("li");
+    let listitems=document.getElementsByClassName("list-items");
     console.log(listitems.length);
      for(let x=0;x<listitems.length;x++){
        var span=document.createElement("span");
@@ -71,6 +71,7 @@ const removetheitem=function(y){
 const additemstolist=function(){
     let input_item=document.getElementById("input_value").value;
     let newli=document.createElement("li");
+    newli.classList.add("list-items")
     let textnode1=document.createTextNode(input_item);
     newli.appendChild(textnode1);
     if(textnode1=""){

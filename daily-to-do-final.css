@@ -43,20 +43,20 @@ ul{
    margin: 0;
    padding: 0;
 }
-ul li{
+ul .list-items{
     padding: 10px 10px 10px 50px;
     font-size: 1.2rem;
     background-color: 	aliceblue;
 }
-ul li:nth-child(odd){
+ul .list-items:nth-child(odd){
     background-color: snow;
 }
-ul li:hover{
+ul .list-items:hover{
     background-color: peachpuff;
     cursor: pointer;
 
 }
-ul li.checked{
+ul .list-items.checked{
     background-color: tomato;
     color: white;
     text-decoration: line-through;
@@ -240,4 +240,11 @@ ul a{
         justify-content: center;
         align-items: center;
     }
+}
+
+.logo{
+    height: 50px;
+    position: fixed;  
+    margin-top: 10px;
+    margin-left: 10px;
 }
