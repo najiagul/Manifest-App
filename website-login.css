@@ -177,3 +177,11 @@ ul a{
     height: 100px;
     margin: 150px;
 }
+
+
+.logo{
+    height: 50px;
+    position: fixed;  
+    margin-top: 10px;
+    margin-left: 10px;
+}
