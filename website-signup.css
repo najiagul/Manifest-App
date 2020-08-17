@@ -203,3 +203,10 @@ ul a{
     margin: 3px;
     align-self: center;
 }
+
+.logo{
+    height: 50px;
+    position: fixed;  
+    margin-top: 10px;
+    margin-left: 10px;
+}
