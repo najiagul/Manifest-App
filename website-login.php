@@ -14,7 +14,7 @@ if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['login']
   {
     $failure = 'Email and password are required';
     $_SESSION['status'] = $failure;
-    header( 'Location: website-login.php' ) ;
+    header( 'Location: website-login.php' ) ; 
     return;
   }
   else //Login successful
