@@ -47,10 +47,11 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     
 
-        var list = document.querySelector('ul');
+        var list = document.querySelector('#mylist');
         list.addEventListener('click', function(ev) {
-                if (ev.target.tagName === 'LI') {
+                if (ev.target.className === 'list-items') {
                      ev.target.classList.toggle('checked');
+                     console.log("pk")
                 }
 
         }, false);
