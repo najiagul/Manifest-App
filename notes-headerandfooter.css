@@ -168,3 +168,11 @@ ul a{
         align-items: center;
     }
 }
+
+
+.logo{
+    height: 50px;
+    position: fixed;  
+    margin-top: 10px;
+    margin-left: 10px;
+}
