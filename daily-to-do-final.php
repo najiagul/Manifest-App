@@ -113,7 +113,7 @@ if (isset($_POST['show']) )
         <div class="innerfooter">
             <div class="footer-items">
                 <h1>Manifest</h1>
-                <p>Description</p>
+                <p>Focus on what matters most</p>
                 <p><a href=""></a>Back to top</p>
             </div>
             <div class="footer-items">
