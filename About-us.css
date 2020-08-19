@@ -32,12 +32,15 @@ nav{
 .head{
 
     flex: 1;
-    height: 100%; 
+    height: 100%;
     margin-left: 4%;
     display: flex;
     align-items: center;
     font-size: 3.5rem;
-     font-family: 'Alex Brush', cursive;
+     /* font-family: 'Alex Brush', cursive; */
+     font-family: 'Cormorant Garamond', serif;
+font-family: 'Oswald', sans-serif;
+
     font-weight: 700;
     color: white;
     z-index: 1;
@@ -49,7 +52,10 @@ nav{
     list-style: none;
     font-size: 1rem;
     text-transform: uppercase;
-    font-family:  'Noto Sans TC', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
+font-family: 'Oswald', sans-serif;
+
+    /* font-family:  'Noto Sans TC', sans-serif; */
     /* border:2px solid black; */
     padding:5px 10px 5px 10px; 
     transition: 0.5s all ease-in-out; 
@@ -120,6 +126,9 @@ nav{
     background-color: #00121b;
     margin-top: 4rem;
     display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Oswald', sans-serif;
+    
 }
 .innerfooter{
     width: 95%;
@@ -179,18 +188,27 @@ ul a{
     height: 100vh;
     width: 100%;
     font-size:4rem ;
-    color: gray;
+    color: black;
+    font-family: 'Cormorant Garamond', serif;
+font-family: 'Oswald', sans-serif;
+
 }
 .parallax:nth-child(2){
-    background-color: palegoldenrod;
-    background-image: url('one.jpg');
-    background-size: cover;
-    background-color: violet;
+     background-image: url('logo-parallax.png');
+    background-size: -30%;
+    justify-content: center;
+    background-color: #ECECEC;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    margin: auto;
 }
+
+
  .parallax:nth-child(3){
     /* background-color: violet; */
     color:black;
-    border: 2px solid black;
+    /* border: 2px solid black; */
     width: 80%;
     display: flex;
     justify-content: center;
@@ -203,13 +221,36 @@ ul a{
 } 
 .parallax:nth-child(4){
     height: 400px;
-    background-image: url('two.jpg');
+    background-image: url('canvas-final.png');
     background-size: cover;
     background-attachment: fixed;
 }
 .parallax:nth-child(6){
     height: 400px;
-    background-image: url('three.jpg');
+    background-image: url('to-do-list-final.png');
     background-size: cover;
     background-attachment: fixed;
+    align-items: center;
+}
+.parallax:nth-child(8){
+    height: 400px;
+    background-image: url('notes-final.png');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+.logo{
+    height: 50px;
+    position: fixed;  
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.manifest{
+
+    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Oswald', sans-serif;
+    
+    font-weight: bolder;
+    color: #90ccf4;
 }
