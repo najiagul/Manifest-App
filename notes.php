@@ -78,7 +78,7 @@ if (isset($_POST['show']) )
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Noto+Sans+TC&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <title>Notes</title>
 </head>
 <body>
     <nav>
@@ -88,7 +88,8 @@ if (isset($_POST['show']) )
             <div class="line"></div>
         </div>
 
-        <div class="head">Manifest</div>
+        <div class="head"></div>
+        <img class="logo" src="logo-final.png"> 
         <ul class="nav-links">
             <li><a href="#">About</a></li>
             <li><a href="features.html">Features</a></li>
@@ -125,9 +126,9 @@ if (isset($_POST['show']) )
     <div class="footer">
         <div class="innerfooter">
             <div class="footer-items">
-                <h1>Our name</h1>
-                <p>description</p>
-                <p><a href=""></a>back to top</p>
+                <h1>Manifest</h1>
+                <p>Focus on what matters most</p>
+                <p><a href=""></a>Back to top</p>
             </div>
             <div class="footer-items">
                 <h3>Follow</h3>
@@ -140,7 +141,7 @@ if (isset($_POST['show']) )
             
         </div>
         <div class="btm-most">
-            all rights reserved &copy 2020
+            All rights reserved &copy 2020
         </div>
     </div>
     <script src="hamburgerresponsive.js"></script>
