@@ -99,10 +99,6 @@ if (isset($_POST['show']) )
             </form>
         </div>
         <ul id="mylist">
-            <!-- <li>wow</li>
-            <li class="checked">wow</li>
-             <li>wow</li>
-             -->
 
         </ul>
     </div>
