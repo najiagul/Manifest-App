@@ -13,6 +13,9 @@ body{
     height: auto; 
     /* background-color: blue; */
     margin: 10px auto;
+    height: 200vh;
+    /* position: sticky; */
+    /* background-color: #00121b; */
 }
 .header{
     padding-top: 30px;
@@ -25,17 +28,20 @@ body{
     text-align: center;
 
 }
-input{
-    width: 75%;
-    height: 30px;
+#input{
+    width: 70%;
+    height: 40px;
     border: none;
     font-size: 1rem;
+    padding-left: 20px;
+    /* color: #f44336; */
+    /* border:2px solid grey */
 }
 .additem{
-    width: 25%;
+    width: 15%;
     border: none;
     background-color: #ECECEC;
-    height: 35px;
+    height: 40px;
     cursor: pointer;
     padding: 5px;
     transition: 0.3s;
@@ -69,6 +75,7 @@ ul .list-items.checked{
     font-size: 1.2rem;
    
   }
+ 
   
 .close:hover{
     background-color: #f44336;
