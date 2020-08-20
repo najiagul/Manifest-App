@@ -49,6 +49,7 @@ isset($_POST['password']) && isset($_POST['cpassword']) )
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=yes" >
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="website-signup.css"> 
+     <link href="https://fonts.googleapis.com/css2?family=Alata&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://smtpjs.com/v3/smtp.js">
@@ -87,27 +88,27 @@ isset($_POST['password']) && isset($_POST['cpassword']) )
       <fieldset id="form">
       <legend class="legend-text">Sign Up!</legend> 
     <form name="myform" method="POST">
-      <label for="firstname">First Name</label>
+      <label for="firstname" class="field">First Name</label>
       <input type="text" name="fname" placeholder="" class = "form-field"required>
       <br>
-      <label for="lastname">Last Name</label>
+      <label for="lastname" class="field">Last Name</label>
       <input type="text" name="lname" placeholder="" class="form-field"required>
       <br>
-      <label for="email">Email</label>
+      <label for="email" class="field">Email</label>
       <input type="text" id="email" name="useremail" placeholder="Enter a valid email address" class="form-field" required>
       <br>
-      <label for="confirm-email">Confirm Email</label>
+      <label for="confirm-email" class="field">Confirm Email</label>
       <input type="text" name="cemail" placeholder="Re-enter email" class="form-field" required>
       <br>
-      <label for="password">Password</label>
-      <input type="password" name="password" class="form-field" placeholder="Choose a strong password" required>
-      <label for="confirm-password">Confirm Password</label>
+      <label for="password" class="field">Password</label>
+      <input type="password" name="password" class="form-field" placeholder="Choose a strong password" required><br>
+      <label for="confirm-password" class="field">Confirm Password</label>
       <input type="password" name="cpassword" class="form-field" placeholder="Re-enter password" required>
       <br> <br>
       <!--<button type="button" name="create" id="sign-up-btn" onclick="sendEmail()">Create Account</button>
       <button type="button" name="cancel" id="submit-btn" >Cancel</button> -->
-      <input type="submit" name="create" value="Create account">
-      <input type="submit" name="cancel" value="Cancel">
+      <input type="submit" name="create" value="Create account" class="signup-button">
+      <input type="submit" name="cancel" value="Cancel" class="signup-button">
       <?php
       if ( isset($_SESSION["status"]) ) {
         echo('<p style="color:red">'.$_SESSION["status"]."</p>\n");
