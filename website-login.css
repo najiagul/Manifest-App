@@ -6,12 +6,14 @@
 }
 /* nav styling */
 body{
-    background-color:#ECECEC;
+    background-image: url(bg-signup.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 nav{
     height: 12vh;
     background-color:#5DA2D5;
-    /* opacity: 75%; */ 
+    /* opacity: 75%; */
     display: flex;
     top: 0;
     position: sticky;
@@ -171,17 +173,103 @@ ul a{
     }
 }
 
-.login-container{
+/* .login-container{
     position: absolute;
     width: 300px;
-    height: 100px;
-    margin: 150px;
-}
-
+    height: 80px;
+    /* margin: 150px; */
+    /* justify-content: center;
+    align-items: center;
+     padding: 5%;
+     margin-left: 15% */
+} */
 
 .logo{
     height: 50px;
     position: fixed;  
     margin-top: 10px;
     margin-left: 10px;
+}
+
+#login-form{
+    position: relative;
+    display: inline-block; 
+     text-align: center;
+    background-color:lightgray;
+    /* margin: 18px; */
+    border-radius: 30px;
+    border-color: black;
+    border-width: 5px;
+    width: 50%;
+    opacity: 0.8;
+    justify-content: center;
+    align-items: center;
+     /* padding: 40%; */
+     margin-left: 20%;
+     margin-top: 5%;
+ } 
+ 
+/* .login-container{
+    justify-content: center;
+    align-items: center;
+     padding: 5%;
+     margin-left: 15%
+   
+}  */
+
+ div.form
+{
+    display: block;
+    text-align: center;
+    overflow: scroll;
+} 
+
+
+.login-legend-text{
+  text-align: center;
+  font-size: 40px;
+  align-self: center;
+  color: black;
+  font-family: 'Alata', sans-serif;
+font-family: 'Libre Baskerville', serif;
+}
+
+.field{
+    padding: 10px;
+    margin: 5px;
+    align-self: center;
+    border-radius: 10px 10px 10px 10px;
+    border-color: black;
+
+}
+
+.logo{
+    height: 50px;
+    position: fixed;  
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+
+ .field-text{
+    font-weight: bolder;
+    font-size: large;
+    color: black;
+    font-family: 'Alata', sans-serif;
+font-family: 'Libre Baskerville', serif;
+
+} 
+
+.btn{
+    border-radius: 10px 10px 10px 10px;
+    width: 120px;
+    height: 40px;
+    margin: 2%;
+    background-color: #ececec;
+    color: black;
+    font-weight: bolder;
+    border-color: black;
+    font-family: 'Alata', sans-serif;
+font-family: 'Libre Baskerville', serif;
+
 }

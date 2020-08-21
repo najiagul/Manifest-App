@@ -52,6 +52,7 @@ if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['login']
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="website-login.css">
+      <link href="https://fonts.googleapis.com/css2?family=Alata&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta charset="utf-8">
@@ -79,7 +80,7 @@ if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['login']
   </nav>
 
 
-    <div class="login-container">
+    <div class="login-container" id="form">
 
       <fieldset id="login-form">
       <legend class="login-legend-text">Please Login</legend>
@@ -91,13 +92,13 @@ if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['login']
       ?>
   
       <form method="POST" >
-      <label for="name">Email</label>
-      <input type="text" name="email" id="name" class="username-field" required> <br/> <br/>
-      <label for="pass">Password</label>
-      <input type="password" id="pass" name="password" class="password-field" required><br/>
+      <label for="name" class="field-text">Email</label>
+      <input type="text" name="email" id="name" class="field" required> <br/> <br/>
+      <label for="pass" class="field-text">Password</label>
+      <input type="password" id="pass" name="password" class="field" required><br/>
       <!--<button type="button" class="login-btn" onclick="LoginValidate()">Login</button>
       <button type="button" name="cancel" class="cancel-btn">Cancel</button> -->
-      <input type="submit" name="login" value="Log In">
+      <input type="submit" name="login" value="Log In" class = "btn">
       </fieldset>
      </form>
     </div>
