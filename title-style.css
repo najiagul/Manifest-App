@@ -5,6 +5,7 @@
 }
 body{
     background-color:#ECECEC;
+    overflow-x: hidden;
 }
 nav{
     height: 12vh;
@@ -45,7 +46,7 @@ nav{
     text-decoration: none;
     color:white;
     list-style: none;
-    font-size: 1rem;
+    font-size: 1.5rem;
     text-transform: uppercase;
     font-family:  'Noto Sans TC', sans-serif;
     /* border:2px solid black; */
@@ -150,9 +151,13 @@ nav{
     
     /* padding-top: 300px; */
 }
+.titledescription h1{
+    font-size: 5rem;
+    color: lawngreen;
+}
 .titledescription p{
     padding-top: 90px;
-    font-size: 1.4rem;
+    font-size: 2rem;
     color: white;
 }
 
@@ -251,12 +256,12 @@ nav{
     transform: scale(1.05);
 }
 .images-features img{
-    border:2px solid black;
+    /* border:2px solid black; */
     z-index: 1;
     /* opacity: 1; */
 }
 .image h1{
-    font-size: 4rem;
+    font-size: 5rem;
     color: white;
 }
 
@@ -308,6 +313,40 @@ ul a{
         text-align: center;
         padding: 10px;
 }
+.container2{
+    width: 60%;
+    height: 100vh;
+    margin: auto;
+    margin-top: 100px;
+    
+    /* border:2px solid black; */
+    /* margin-bottom: 2000px; */
+}
+.item{
+    width: 700font-sizepx;
+    height: 75vh;
+    background-color:#90ccfa;
+    /* border:2px solid black; */
+    border-radius: 25px;
+    /* overflow: scroll; */
+   
+      
+}
+.left{
+    background-image:none !important;
+     filter:none !important;
+     /* color: pink; */
+
+  }
+  .right{
+    
+      background-image:none !important;
+    filter:none !important;
+  }
+.carousel-control{
+    /* border:2px solid black; */
+    color:black;
+}
 @media screen and (max-width:768px){
     .footer-items{
         width: 100%;
@@ -318,18 +357,26 @@ ul a{
     .images-features img{
         width:300px;
         height: 200px;
-        background-color:pink;
+        /* background-color:pink; */
     }
     .images-features-bw img{
         width:300px;
         height: 200px;
         /* opacity: 10%; */
     }
+    /* .titledescription h1{
+        font-size: 2.5rem;
+    } */
+    .titledescription p{
+        font-size: 1.4rem;
+        /* color: pink; */
+    }
+    .container2{
+        height: 50vh;
+    }
+    .item{
+        height: 40vh;
+    }
+
 }
 
-.logo{
-    height: 50px;
-    position: fixed;  
-    margin-top: 10px;
-    margin-left: 10px;
-}
