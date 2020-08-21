@@ -1,17 +1,57 @@
 <?php
 require_once 'pdo.php';
 
-if(!isset($_SESSION))
-{
-    session_start();
-}
+session_start();
 //Demand an active user
 if ( !isset($_SESSION['user']) )
 {
     header( 'Location: website-login.php' ) ;
     return;
 } 
-?> 
+
+//saving todos to database
+if (isset($_POST['add']))
+    {
+    $sql_user = 'SELECT user_id from users WHERE email=:email';
+    $userid = $pdo->prepare($sql_user);
+    $userid->execute(array(':email' => $_POST['user']));
+    $check = $userid->fetch(PDO::FETCH_ASSOC);
+    $userid = $check['user_id'];
+    $sql = 'INSERT INTO todolist (bullet, user_id) VALUES (:bullet, :uid)';
+    $statement = $pdo->prepare($sql);
+    $statement->execute( array(':bullet'=> $_POST['bullet'],
+                                ':uid' => $userid
+                             ));
+    
+    // POST - Redirect - GET
+    header("Location: daily-to-do-final.php?email=".urlencode($_SESSION['user']));
+    return;
+    }
+
+//Retreiving all todos
+if (isset($_POST['show']) )
+{
+    $sql_user = 'SELECT user_id from users WHERE email=:email';
+    $userid = $pdo->prepare($sql_user);
+    $userid->execute(array(':email' => $_SESSION['user']));
+    $check = $userid->fetch(PDO::FETCH_ASSOC);
+    $userid = $check['user_id'];
+    $show_stmnt = "SELECT bullet FROM todolist WHERE user_id = :uid";
+    $statement = $pdo->prepare($show_stmnt);
+    $statement->execute( 
+        array( ':uid' => $userid)
+    );
+    $statement->setFetchMode(PDO::FETCH_ASSOC);
+    $user_bullets = array();
+    $i=0;
+    while ($r = $statement->fetch()) {
+        $user_bullets[$i] = $r;
+        $i = $i + 1;
+    }
+    print_r($user_bullets);
+}
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -21,14 +61,11 @@ if ( !isset($_SESSION['user']) )
     <link rel="stylesheet" href="daily-to-do-final.css">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     
     <title>To-do List</title>
 </head>
 <body>
-    <!-- <div class="result">jjrj</div> -->
+
     <nav>
         <div class="hamburger">
             <div class="line"></div>
@@ -37,7 +74,7 @@ if ( !isset($_SESSION['user']) )
         </div>
 
         <div class="head"></div>
-        <img class="logo" src="lhttps://raw.githubusercontent.com/najiagul/Manifest-App/master/logo-parallax.png" > 
+        <img class="logo" src="logo-final.png" > 
         <ul class="nav-links">
             <li><a href="#" >About</a></li>
             <li><a href="features.html">Features</a></li>
@@ -49,21 +86,21 @@ if ( !isset($_SESSION['user']) )
 
     <div class="container">
         <div class="header">
-            <form action="" method="post" id="to-do-form">
+            <form action="" method="post">
                 <h1>To-Do list</h1>
-                <span class="inputvalue"><input type="text"  id="input" id="input_value" placeholder="What to you want to do?" name="bullet">
-                
-                <button class="additem" id="addforjavascript">ADD</button></span>
+                <input type="text" id="input_value" placeholder="What to you want to do?" name="bullet">
+                <input type="submit" value="Add"  name="add">
+                <input type="submit" value="My tasks" name="show">
+                <!-- <span class="additem">ADD</span> -->
             </form>
         </div>
         <ul id="mylist">
-        <!-- <li class="checked">wow</li> -->
 
         </ul>
     </div>
 
 
-    
+
     <div class="footer">
         <div class="innerfooter">
             <div class="footer-items">
@@ -84,39 +121,8 @@ if ( !isset($_SESSION['user']) )
         <div class="btm-most">
             All rights reserved &copy 2020
         </div>
-
     </div>
-    <script src="daily-to-do-final.js"></script>]
-
-    <script>
-        $(document).ready(function () {
-          $('.additem').click(function (e) {
-          
-            e.preventDefault();
-            
-            var input_value = $('#input').val();
-            //var email=  <?php echo $_SESSION['user'] ?>;
-        
-            $.ajax
-              ({
-                type: "POST",
-                url: "daily-to-do-database.php",
-                data: { "input_value": input_value,
-                        //"email": email
-                    },
-                
-                success: function (data) {
-                 $('.result').html(data);
-                  $('#to-do-form')[0].reset();
-                 
-                }
-              });
-          });
-        });
-        </script>
-        <script></script>
-
-    
+    <script src="daily-to-do-final.js"></script>
     
 </body>
 </html>

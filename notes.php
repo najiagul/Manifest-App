@@ -1,6 +1,10 @@
 <?php
 require_once 'pdo.php';
-session_start();
+
+if(!isset($_SESSION))
+{
+    session_start();
+}
 //Demand a get parameter
 if ( !isset($_GET['email']) || strlen($_GET['email']) < 1 )
 {
