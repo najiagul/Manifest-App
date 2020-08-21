@@ -53,9 +53,12 @@ if ( !isset($_SESSION['user']) )
                 <h1>To-Do list</h1>
                 <span class="inputvalue"><input type="text"  id="input" id="input_value" placeholder="What to you want to do?" name="bullet">
                 
-                <button class="additem" id="addforjavascript">ADD</button></span>
+                <button class="additem" id="addforjavascript">ADD</button>
+                <button></button>
+            </span>
+                
             </form>
-        </div>
+        </div> 
         <ul id="mylist">
         <!-- <li class="checked">wow</li> -->
 
@@ -94,15 +97,12 @@ if ( !isset($_SESSION['user']) )
           
             e.preventDefault();
             
-            var input_value = $('#input').val();
-            //var email=  <?php echo $_SESSION['user'] ?>;
-        
+            var input_value = $('#input').val();        
             $.ajax
               ({
                 type: "POST",
                 url: "daily-to-do-database.php",
                 data: { "input_value": input_value,
-                        //"email": email
                     },
                 
                 success: function (data) {

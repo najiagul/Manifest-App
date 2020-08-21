@@ -1,13 +1,14 @@
 <?php 
 require_once 'pdo.php';
 session_start();
-if (!empty($_POST)){
-$dbhost = 'localhost';
+if (!empty($_POST))
+{
+/* $dbhost = 'localhost';
 $dbuser = 'pooja';
 $dbpass = 'broomstick';
-$db = 'todoapp';
+$db = 'todoapp'; */
 
-//$email = $_POST['email'];
+
 $inputvalue = $_POST['input_value'];
 $email = $_SESSION['user'];
 
