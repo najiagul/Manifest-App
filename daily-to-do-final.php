@@ -12,16 +12,14 @@ if ( !isset($_SESSION['user']) )
 //saving todos to database
 if (isset($_POST['add']))
     {
-        echo $_POST['bullet'];
-    $_SESSION['bullet'] = $_POST['bullet'];
     $sql_user = 'SELECT user_id from users WHERE email=:email';
     $userid = $pdo->prepare($sql_user);
-    $userid->execute(array(':email' => $_SESSION['user']));
+    $userid->execute(array(':email' => $_POST['user']));
     $check = $userid->fetch(PDO::FETCH_ASSOC);
     $userid = $check['user_id'];
     $sql = 'INSERT INTO todolist (bullet, user_id) VALUES (:bullet, :uid)';
     $statement = $pdo->prepare($sql);
-    $statement->execute( array(':bullet'=> $_SESSION['bullet'],
+    $statement->execute( array(':bullet'=> $_POST['bullet'],
                                 ':uid' => $userid
                              ));
     
@@ -50,9 +48,7 @@ if (isset($_POST['show']) )
         $user_bullets[$i] = $r;
         $i = $i + 1;
     }
-    $_SESSION['userbullets'] = $user_bullets;
-    print_r($_SESSION['userbullets']);
-
+    print_r($user_bullets);
 }
 ?>
 
