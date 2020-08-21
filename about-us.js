@@ -29,3 +29,22 @@ window.addEventListener('scroll',function(){
 })
 
 
+function DirectToCanvas()
+{
+  window.location.href = "daily-to-do-final.html";
+}
+
+
+function DirectToList()
+{
+  window.location.href = "daily-to-do-final.html";
+}
+
+
+
+function DirectToNotes()
+{
+  window.location.href = "daily-to-do-final.html";
+}
+
+
