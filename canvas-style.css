@@ -2,7 +2,9 @@
     padding: 0%;
     margin: 0%;
     box-sizing: border-box;
+    font-weight: 300;
 }
+
 .maincontainer{
     /* background-color: black; */
     display: flex;
@@ -15,8 +17,9 @@
 header{
 
     height: 10vh;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     width: 100%;
+    background-color: white;
 
 }
 #canvas{
@@ -28,4 +31,29 @@ header{
     /* flex: 1; */
     display: inline;
     margin-left:3rem ;
+}
+/* .color{
+    width:700px;
+} */
+button{
+    width:100px;
+    height:30px;
+    border: none;
+    background-color: #5DA2D5;
+    font-size:1rem;
+    transition-duration: 0.5s;
+
+}
+.ledeffect{
+    width:250px
+}
+.patternbutton{
+    width:200px
+}
+button:hover{
+    background-color: white;
+}
+label{
+    font-size:1.2rem;
+    /* color: violet; */
 }
