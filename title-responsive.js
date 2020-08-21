@@ -7,12 +7,15 @@ hamburger.addEventListener('click',()=>{
 const appearright=function(e){
     const description=document.querySelectorAll(".description");
     const description2=document.querySelector(".description-bw")
-    
+    // console.log(description);
+    // let descriptionposition=description.getBoundingClientRect().top;
+    // console.log(descriptionposition);
     description.forEach(one=>{
         const slideInAt=window.scrollY+window.innerHeight-one.offsetHeight/2;
-        
+        // console.log(slideInAt);
+        // console.log(one.offsetHeight)
         const bottomofdiv=one.offsetTop+one.clientHeight;
-       
+        // console.log(bottomofdiv);
         const halfShown=slideInAt>one.offsetTop;
         const isNotscrolledpast=window.scrollY<bottomofdiv;
         if(halfShown && isNotscrolledpast){
@@ -23,9 +26,10 @@ const appearright=function(e){
         }    
     })
     const slideInAt2=window.scrollY+window.innerHeight-description2.offsetHeight/2;
-        
+        // console.log(slideInAt);
+        // console.log(one.offsetHeight)
         const bottomofdiv2=description2.offsetTop+description2.clientHeight;
-        
+        // console.log(bottomofdiv);
         const halfShown2=slideInAt2>description2.offsetTop;
         const isNotscrolledpast2=window.scrollY<bottomofdiv2;
         if(halfShown2 && isNotscrolledpast2){
@@ -41,10 +45,13 @@ const appearleft=function(){
     const imagesfeatures=document.querySelectorAll(".images-features");
     console.log(imagesfeatures)
     const imagesfeatures2=document.querySelector(".images-features-bw");
-   
+    // console.log(description);
+    // let descriptionposition=description.getBoundingClientRect().top;
+    // console.log(descriptionposition);
     imagesfeatures.forEach(two=>{
         const slideInAt=window.scrollY+window.innerHeight-two.offsetHeight/2;
-        
+        // console.log(slideInAt);
+        // console.log(one.offsetHeight)
         const bottomofdiv=two.offsetTop+two.clientHeight;
         console.log("Wow")
         // console.log(bottomofdiv);
