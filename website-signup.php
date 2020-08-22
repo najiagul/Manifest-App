@@ -34,7 +34,7 @@ isset($_POST['password']) && isset($_POST['cpassword']) )
                             ':password'=> $_POST['password']) );
    $failure = 'Account Created!';
    $_SESSION['status'] = $failure;
-   header("Location: website-signup.php");
+   header("Location: About-us.html");
   return;
 
   }
@@ -71,8 +71,7 @@ isset($_POST['password']) && isset($_POST['cpassword']) )
       <div class="head"></div>
        <img class="logo" src="logo-final.png"> 
       <ul class="nav-links">
-          <li><a href="#">About</a></li>
-          <li><a href="#">Features</a></li>
+          <li><a href="About-us.html">About</a></li>
           <li><a href="website-login.php">Login</a></li>
           <li><a href="title.html">Home</a></li>
       </ul>
@@ -107,7 +106,7 @@ isset($_POST['password']) && isset($_POST['cpassword']) )
       <br> <br>
       <!--<button type="button" name="create" id="sign-up-btn" onclick="sendEmail()">Create Account</button>
       <button type="button" name="cancel" id="submit-btn" >Cancel</button> -->
-      <input type="submit" name="create" value="Create account" class="signup-button">
+      <input type="submit" name="create" value="Create account" class="signup-button" >
       <input type="submit" name="cancel" value="Cancel" class="signup-button">
       <?php
       if ( isset($_SESSION["status"]) ) {
