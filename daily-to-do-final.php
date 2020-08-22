@@ -39,9 +39,10 @@ if ( !isset($_SESSION['user']) )
         <div class="head"></div>
         <img class="logo" src="logo-parallax.png" > 
         <ul class="nav-links">
+		 <li><a href="title.html">Home</a></li>
             <li><a href="canvas.html" >Canvas</a></li>
             <li><a href="notes.php">Notes</a></li>
-     
+		 
             <li><a href="website-logout.php">Signout</a></li>
         </ul>
 
