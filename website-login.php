@@ -32,7 +32,7 @@ if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['login']
       $_SESSION['status'] = $failure;
       $_SESSION['user'] = $_POST['email'];
       //Redirect the browser to notes.php page
-      header("Location: notes.php?email=".urlencode($_SESSION['user']));
+      header("Location: About-us.html");
       return;
     }
     else   //Incorrect password
@@ -71,8 +71,7 @@ if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['login']
       <div class="head"></div>
       <img class="logo" src="logo-final.png"> 
       <ul class="nav-links">
-          <li><a href="#">About</a></li>
-          <li><a href="#">Features</a></li>
+          <li><a href="About-us.html">About</a></li>
           <li><a href="title.html">Home</a></li>
           <li><a href="website-signup.php">Signup</a></li>
       </ul>
