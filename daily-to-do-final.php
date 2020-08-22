@@ -37,12 +37,12 @@ if ( !isset($_SESSION['user']) )
         </div>
 
         <div class="head"></div>
-        <img class="logo" src="lhttps://raw.githubusercontent.com/najiagul/Manifest-App/master/logo-parallax.png" > 
+        <img class="logo" src="logo-parallax.png" > 
         <ul class="nav-links">
-            <li><a href="#" >About</a></li>
-            <li><a href="features.html">Features</a></li>
-            <li><a href="#">Login</a></li>
-            <li><a href="#">Signup</a></li>
+            <li><a href="canvas.html" >Canvas</a></li>
+            <li><a href="notes.php">Notes</a></li>
+     
+            <li><a href="website-logout.php">Signout</a></li>
         </ul>
 
     </nav>
