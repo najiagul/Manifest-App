@@ -6,19 +6,19 @@ if(!isset($_SESSION))
     session_start();
 }
 //Demand a get parameter
-if ( !isset($_GET['email']) || strlen($_GET['email']) < 1 )
-{
-    header( 'Location: website-login.php' ) ;
-    return;
-    die('Name parameter missing');
+// if ( !isset($_GET['email']) || strlen($_GET['email']) < 1 )
+// {
+//     header( 'Location: website-login.php' ) ;
+//     return;
+//     die('Name parameter missing');
  
-}
+// }
 //Demand an active user
-if ( !isset($_SESSION['user']) )
-{
-    header( 'Location: website-login.php' ) ;
-    return;
-} 
+// if ( !isset($_SESSION['user']) )
+// {
+//     header( 'Location: website-login.php' ) ;
+//     return;
+// } 
 
  ?>
 
